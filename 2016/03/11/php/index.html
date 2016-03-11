@@ -149,9 +149,7 @@
   </header>
 
   <section class="post">
-    <p>##php基础语法</p>
-<p>###php标记</p>
-<pre><code>1.&lt;? php echo &quot;hello php&quot;;?&gt;
+    <h2 id="php基础语法"><a href="#php基础语法" class="headerlink" title="php基础语法"></a>php基础语法</h2><h3 id="php标记"><a href="#php标记" class="headerlink" title="php标记"></a>php标记</h3><pre><code>1.&lt;? php echo &quot;hello php&quot;;?&gt;
 
 2.&lt;? echo &quot;hello world&quot;;?&gt;//短标记
 
@@ -160,8 +158,7 @@
 4.&lt;% echo &quot;hello php&quot;;%&gt;//asp风格
 </code></pre><p>注：1，3可以直接用，但是2，4需要修改php.ini的配置文件才能使用，只做了解。</p>
 <hr>
-<p>###PHP注释</p>
-<p>1.多行注释</p>
+<h3 id="PHP注释"><a href="#PHP注释" class="headerlink" title="PHP注释"></a>PHP注释</h3><p>1.多行注释</p>
 <pre><code>/*
     注释的内容
     注释的内容
@@ -174,8 +171,7 @@
     *被注释的文档
 */
 </code></pre><hr>
-<p>###变量</p>
-<p>####变量的声明<br>变量以$开头，后面跟变量名</p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="变量的声明"><a href="#变量的声明" class="headerlink" title="变量的声明"></a>变量的声明</h4><p>变量以$开头，后面跟变量名</p>
 <p>变量字母，数字，下划线组成，不以数字开头</p>
 <p>变量名区分大小写</p>
 <p>php于JavaScript类似的弱类型语言，不需要实现声明变量的数据类型</p>
@@ -184,12 +180,16 @@
     $color = &quot;red&quot;;hp&quot;
     $sum = 15+&quot;12&quot;;//$sum = 27;
 </code></pre><hr>
-<p>####变量的赋值<br>1.值赋值：即将赋值表达式的值复制给变量（直接赋值）<br>2.引用赋值：php4引用了引用赋值，创建的一个变量与另一个变量引用的内容相同</p>
+<h4 id="变量的赋值"><a href="#变量的赋值" class="headerlink" title="变量的赋值"></a>变量的赋值</h4><p>1.值赋值：即将赋值表达式的值复制给变量（直接赋值）<br>2.引用赋值：php4引用了引用赋值，创建的一个变量与另一个变量引用的内容相同</p>
 <pre><code>例：
     $var_1 = &quot;hellow php&quot;;
     $var_2 = &amp;$var_1;//把变量var_1的内存地址赋值给var_2，即引用赋值。
-</code></pre><p>####变量的变量<br>        $var_1 = “hello”;<br>        $$var_1=”php”;<br>        echo $var_1;//输出hello<br>        echo $hello://输出php<br>        echo ${$var_1};//输出php</p>
-<p>####超全局变量（做了解）<br>php提供了很多预定于的变量，用于提供大量与环境有关的信息</p>
+</code></pre><h4 id="变量的变量"><a href="#变量的变量" class="headerlink" title="变量的变量"></a>变量的变量</h4><pre><code>$var_1 = &quot;hello&quot;;
+$$var_1=&quot;php&quot;;
+echo $var_1;//输出hello
+echo $hello://输出php
+echo ${$var_1};//输出php
+</code></pre><h4 id="超全局变量（做了解）"><a href="#超全局变量（做了解）" class="headerlink" title="超全局变量（做了解）"></a>超全局变量（做了解）</h4><p>php提供了很多预定于的变量，用于提供大量与环境有关的信息</p>
 <p>打印/输出超全局变量：parent_r($_SERVER)</p>
 <p>1.$_SERVER服务器变量，该全局变量包含着服务器和客户端配置及当前请求环境有关的信息</p>
 <pre><code>$_SERVER[&apos;SERVER_NAME&apos;];当前运行脚本所在的服务器的主机名
@@ -218,9 +218,7 @@ $_SERVER[&apos;HTTP_USER_AGENT&apos;];操作系统和浏览器的相关信息
 <p>8.$_ENV      环境变量数组</p>
 <p>9.$_GLOBALS    所有全局变量数组</p>
 <hr>
-<p>###常量</p>
-<p>####常量的定义</p>
-<p>常量是指在程序执行中无法修改的值。如PI(3.1415926);</p>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><h4 id="常量的定义"><a href="#常量的定义" class="headerlink" title="常量的定义"></a>常量的定义</h4><p>常量是指在程序执行中无法修改的值。如PI(3.1415926);</p>
 <p>在脚本执行期间该值不能改变；</p>
 <p>常量对大小写敏感，通常常量名总是大写；</p>
 <p>常量是全局的，可以在脚本的任何地方引用；</p>
@@ -228,12 +226,15 @@ $_SERVER[&apos;HTTP_USER_AGENT&apos;];操作系统和浏览器的相关信息
 <p>常量使用define()函数定义；</p>
 <pre><code>例：define(&apos;PI&apos;,3.1415926);
     echo PI;//3.1415026
-</code></pre><p>#####1.内置常量<br>    PHP_OS php所在操作系统的名称</p>
-<pre><code>PHP_VERSION当前php的版本号
-</code></pre><p>#####2.魔术常量<br>    <strong>LINE</strong>文件中的当前行号；<br>    <strong>FILE</strong>文件的完整路径和文件名；<br>    <strong>FUNCTION</strong>函数名称；<br>    <strong>CLASS</strong>类的名称；<br>    <strong>METHOD</strong> 类的方法名；</p>
-<p>###数据类型</p>
-<p>####标量数据类型</p>
-<p>#####字符串<br>字符串有三种定义方式：单引号，双引号，定界符（heredoc）;</p>
+</code></pre><h5 id="1-内置常量"><a href="#1-内置常量" class="headerlink" title="1.内置常量"></a>1.内置常量</h5><pre><code>PHP_OS php所在操作系统的名称
+
+PHP_VERSION当前php的版本号
+</code></pre><h5 id="2-魔术常量"><a href="#2-魔术常量" class="headerlink" title="2.魔术常量"></a>2.魔术常量</h5><pre><code>__LINE__文件中的当前行号；
+__FILE__文件的完整路径和文件名；
+__FUNCTION__函数名称；
+__CLASS__类的名称；
+__METHOD__ 类的方法名；
+</code></pre><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="标量数据类型"><a href="#标量数据类型" class="headerlink" title="标量数据类型"></a>标量数据类型</h4><h5 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h5><p>字符串有三种定义方式：单引号，双引号，定界符（heredoc）;</p>
 <p>单引号字符串中出现的变量不会被变量的值替代；</p>
 <p>双引号字符串中最重要的一点是其中的变量会被变量值替代；</p>
 <p>如果遇到美元符号($),解析器会尽可能多地取得后面的字符以组成一个合法的变量名，如果想明确的指定名字的范围，用花括号把变量名括起来。</p>
@@ -251,8 +252,7 @@ $_SERVER[&apos;HTTP_USER_AGENT&apos;];操作系统和浏览器的相关信息
 <p>php定界符中的php变量会被正常的用其他值来代替</p>
 <p>使用定界符要注意：</p>
 <p>结束标识符所在的行不能包含任何其它的字符，这意味着该标识符不能被缩进，在分好之前之后都不能有任何空格或制表符；</p>
-<p>####字符串转义</p>
-<pre><code>\n  换行
+<h4 id="字符串转义"><a href="#字符串转义" class="headerlink" title="字符串转义"></a>字符串转义</h4><pre><code>\n  换行
 
 \r   回车
 
@@ -269,19 +269,18 @@ $num = 5.34;//浮点数(float,double)
 $bo = TRUE;
 $bo = FALSE;//布尔型(bool)
 </code></pre><hr>
-<p>####复合数据类型<br>1.数组</p>
+<h4 id="复合数据类型"><a href="#复合数据类型" class="headerlink" title="复合数据类型"></a>复合数据类型</h4><p>1.数组</p>
 <pre><code>$week = array(&apos;星期一&apos;,&apos;星期二&apos;,&apos;星期三&apos;)
 </code></pre><p>2.对象</p>
 <pre><code>$db = ner db;
-</code></pre><p>####特殊数据类型</p>
-<p>1.资源</p>
+</code></pre><h4 id="特殊数据类型"><a href="#特殊数据类型" class="headerlink" title="特殊数据类型"></a>特殊数据类型</h4><p>1.资源</p>
 <pre><code>$fh = fopen(&quot;test.txt&quot;,&quot;r&quot;)
 </code></pre><p>2.null</p>
 <p>null无，表示没有值，null不表示空格，也不表示0；以下情况，则认为是null</p>
 <p>没有设置为任何预定义的变量；</p>
 <p>明确的赋值为null;</p>
 <p>使用函数unset()清楚；</p>
-<p>###自动类型转换<br>因为php对于类型定义非常的松散，所以有时会根据引用变量的环境，将变量自动转换为最合适的类型；</p>
+<h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><p>因为php对于类型定义非常的松散，所以有时会根据引用变量的环境，将变量自动转换为最合适的类型；</p>
 <pre><code>例1：
     $num = 5;
     $str = &quot;15&quot;;
@@ -295,8 +294,7 @@ $bo = FALSE;//布尔型(bool)
     if($str){
         echo &apos;hello world&apos;;
     }
-</code></pre><p>###类型相关函数</p>
-<p>1.gettype()返回变量的类型，共有8个可能的值 string、integer、float、boolean、array、object、null、unknow;</p>
+</code></pre><h3 id="类型相关函数"><a href="#类型相关函数" class="headerlink" title="类型相关函数"></a>类型相关函数</h3><p>1.gettype()返回变量的类型，共有8个可能的值 string、integer、float、boolean、array、object、null、unknow;</p>
 <pre><code>例：$str = &apos;hello&apos;;
     echo gettype($str);
 </code></pre><p>2.is_type()查看变量是否属于某个类型，是返回TRUE，否返回FALSE；</p>
@@ -312,7 +310,7 @@ $bo = FALSE;//布尔型(bool)
     $arr = array(&apos;a&apos;,&apos;b&apos;,&apos;c&apos;);
     var_dump($arr);
 </code></pre><hr>
-<p>###二维数组<br>数组元素的值也可以是数组</p>
+<h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><p>数组元素的值也可以是数组</p>
 <pre><code>例：$result=array(
         array(
             &apos;pname&apos;=&apos;nokia n73&apos;,
@@ -329,12 +327,11 @@ $bo = FALSE;//布尔型(bool)
     }
 }
 </code></pre><hr>
-<p>##字符串</p>
-<p>####1.echo<br>echo(string arg1 [,string…])是一个语法，不是函数，echo没有返回值，使用逗号分隔；</p>
+<h2 id="字符串-1"><a href="#字符串-1" class="headerlink" title="字符串"></a>字符串</h2><h4 id="1-echo"><a href="#1-echo" class="headerlink" title="1.echo"></a>1.echo</h4><p>echo(string arg1 [,string…])是一个语法，不是函数，echo没有返回值，使用逗号分隔；</p>
 <pre><code>例:$var=&quot;world&quot;;
     echo &quot;hellow&quot; world;
-</code></pre><p>####2.print<br>int print(string arg)实际上不是一个函数(它是一个语言结构)<br>    例：print(“hello $var”);<br>        print “hello world”;</p>
-<p>####3.printf()<br>功能：格式化输出字符串；</p>
+</code></pre><h4 id="2-print"><a href="#2-print" class="headerlink" title="2.print"></a>2.print</h4><p>int print(string arg)实际上不是一个函数(它是一个语言结构)<br>    例：print(“hello $var”);<br>        print “hello world”;</p>
+<h4 id="3-printf"><a href="#3-printf" class="headerlink" title="3.printf()"></a>3.printf()</h4><p>功能：格式化输出字符串；</p>
 <p>%b二进制输出//brianry</p>
 <p>%d整数输出//data</p>
 <p>%f浮点数输出//float</p>
